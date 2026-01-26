@@ -1,8 +1,11 @@
 #include<stdio.h>
 int main() {
-    int a,b,c;
-    scanf("%d%d",&a,&b);
-    c=a+b;
-    printf("%d+%d=%d",a,b,c);
+    int i,n,f=1;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+{
+    f=f*i;
+}
+    printf("%d",f);
     return 0;
 }
