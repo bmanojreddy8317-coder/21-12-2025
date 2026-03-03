@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main() {
+    int N;
+    scanf("%d",&N);
+    int arr[N];
+    int i = 0;
+    while(i < N) {
+        scanf("%d",&arr[i]);
+        i++;
+    }
+    int currentStreak = 0,maxStreak = 0;
+    i = 0;
+    while(i < N) {
+        if(arr[i] == 0) {
+            currentStreak++;
+            if(currentStreak>maxStreak) {
+                maxStreak=currentStreak;
+            }
+        } else {
+            currentStreak=0;
+        }
+        i++;
+    }
+    printf("%d", maxStreak);
+    return 0;
+}
