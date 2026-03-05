@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+    int N;
+    scanf("%d",&N);
+    int i = 0,power,max = 0,surge = 0;
+    while(i<N) {
+        scanf("%d", &power);
+        if(power > max)
+            max = power;
+        if(power > 5)
+            surge++;
+        i++;
+    }
+    printf("%d\n",max);
+    printf("%d\n",surge);
+    return 0;
+}
