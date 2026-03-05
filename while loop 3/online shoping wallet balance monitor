@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() {
+    int balance, N;
+    scanf("%d%d",&balance,&N);
+    int i = 0,purchase,success = 0;
+    while(i < N) {
+        scanf("%d",&purchase);
+        if(balance >= purchase) {
+            balance -= purchase;
+            success++;
+        } else {
+            break;
+        }
+        i++;
+    }
+    printf("%d\n",success);
+    printf("%d\n",balance);
+    return 0;
+}
