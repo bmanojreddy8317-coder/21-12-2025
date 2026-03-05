@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int fuel,N;
+    scanf("%d%d",&fuel,&N);
+    int i = 0,trip,completed = 0;
+    while(i<N) {
+        scanf("%d",&trip);
+
+        if(fuel>=trip) {
+            fuel=fuel-trip;
+            completed++;
+        } else {
+            break;
+        }
+        i++;
+    }
+    printf("%d\n", completed);
+    printf("%d\n", fuel);
+    return 0;
+}
