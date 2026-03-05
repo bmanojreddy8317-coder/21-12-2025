@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int capacity, N;
+    scanf("%d%d",&capacity,&N);
+
+    int i = 0,arriving,treated = 0,rejected = 0;
+    while(i < N) {
+        scanf("%d",&arriving);
+        if(treated+arriving<=capacity)
+            treated+=arriving;
+        else {
+            rejected=rejected+(treated + arriving - capacity);
+            treated =capacity;
+        }
+        i++;
+    }
+    printf("%d\n",treated);
+    printf("%d\n",rejected);
+    return 0;
+}
