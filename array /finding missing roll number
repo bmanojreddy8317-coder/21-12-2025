@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+    int n, i;
+    scanf("%d", &n);
+    int arr[n-1];
+    int actualSum = 0;
+    for(i = 0; i < n-1; i++) {
+        scanf("%d", &arr[i]);
+        actualSum += arr[i];
+    }
+    int expectedSum = n * (n + 1) / 2;
+    printf("%d", expectedSum - actualSum);
+    return 0;
+}
