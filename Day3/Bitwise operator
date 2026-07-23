@@ -1,0 +1,12 @@
+package Day3;
+
+public class DemoBitwise {
+    public static void main(String[] args) {
+        char beta=122;int delta = 'A';
+        System.out.println(beta^delta);
+        System.out.println(beta&'c');
+        System.out.println(delta|646);
+        System.out.println(beta<<4);
+        System.out.println(delta>>5);
+    }
+}
