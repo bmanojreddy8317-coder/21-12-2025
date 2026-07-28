@@ -1,0 +1,17 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int mid = k% nums.length;
+        reverse(nums, 0,nums.length-1);
+        reverse(nums, 0,mid-1);
+        reverse(nums,mid,nums.length-1);
+    }
+    public void reverse(int[] nums,int start,int end)
+    {
+        while(start<end){
+            nums[start]^=nums[end];
+            nums[end]^=nums[start];
+            nums[start]^=nums[end];
+            start++;end--;
+        }
+    }
+}
