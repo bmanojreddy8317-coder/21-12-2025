@@ -1,0 +1,21 @@
+class Solution {
+    public void rotate(int[][] mat) {
+        int size = mat.length;
+        for(int row=0;row<size;row++){
+            for(int col=row+1;col<size;col++){
+                mat[row][col]^=mat[col][row];
+                 mat[col][row]^=mat[row][col];
+                  mat[row][col]^=mat[col][row];
+            }
+        }
+        for(int row=0;row<size;row++){
+            int start =0,end = size-1;
+            while(start<end){
+                mat[row][start]^=mat[row][end];
+                 mat[row][end]^=mat[row][start];
+                  mat[row][start]^=mat[row][end];
+                  start++;end--;
+            }
+        }
+    }
+}
