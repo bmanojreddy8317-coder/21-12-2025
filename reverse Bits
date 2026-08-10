@@ -1,0 +1,11 @@
+class Solution {
+    public int reverseBits(int n) {
+        int result = 0;
+        for(int times = 1;times<=32;times++){
+            result <<= 1;
+            result |= (n & 1);
+            n >>= 1;
+        }
+        return result;
+    }
+}
