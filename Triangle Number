@@ -1,0 +1,16 @@
+class Solution {
+    public int triangleNumber(int[] nums) {
+        int count = 0,size = nums.length;
+        Arrays.sort(nums);
+        for(int n1=0;n1<size;n1++){
+            int n2 = 0,n3 = n1-1;
+            while(n2<n3){
+                if(nums[n2]+nums[n3]>nums[n1]){
+                    count+=n3-n2;
+                    n3--;
+                }else n2++;
+            }
+        }
+        return count;
+    }
+}
