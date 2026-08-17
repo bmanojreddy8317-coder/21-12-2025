@@ -1,0 +1,16 @@
+class Solution {
+    public int longestCommonSubsequence(String text1, String text2) {
+        int rsize = text1.length(),csize = text2.length();
+        int[][] grid = new int[rsize+1][csize+1];
+        for(int row=1;row<=rsize;row++){
+            for(int col=1;col<=csize;col++){
+                if(text1.charAt(row-1)==text2.charAt(col-1))
+                grid[row][col] = grid[row-1][col-1]+1;
+                else{
+                    grid[row][col] = Math.max(grid[row-1][col],grid[row][col-1]);
+                }
+            }
+        } 
+        return grid[rsize][csize];  
+    }
+}
