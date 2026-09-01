@@ -1,0 +1,24 @@
+class Solution {
+    public boolean dfs(List<List<Integer>> grid,int[] visited,int current){
+        visited[current]=1;
+        for(int nei:grid.get(current)){
+            if(visited[nei]==1) return true;
+            if(visited[nei]==0&&dfs(grid,visited,nei))
+            return true;
+        }
+        visited[current]=2;
+        return false;
+    }
+    public boolean canFinish(int num, int[][] mat) {
+        List<List<Integer>> grid = new ArrayList<>();
+        for(int ind=0;ind<num;ind++)
+        grid.add(new ArrayList<>());
+        for(int[] pre: mat)
+        grid.get(pre[1]).add(pre[0]);
+        int[] visited = new int[num];
+        for(int ind=0;ind<num;ind++)
+        if(visited[ind]==0&&dfs(grid,visited,ind))
+        return false;
+        return true;
+    }
+}
