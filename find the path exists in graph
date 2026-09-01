@@ -1,0 +1,25 @@
+class Solution {
+       public static boolean depth(List<List<Integer>> grid,
+                int node, int dest, boolean[] visited)
+    {
+        if(node==dest) return true;
+        visited[node]=true;
+        for(int nei:grid.get(node)){
+            if(!visited[nei]&&depth(grid,nei,dest,visited))
+                return true;
+        }
+        return false;
+    }
+    public static boolean validPath(int n, int[][] mat, 
+                    int src, int dest){
+        List<List<Integer>> grid = new ArrayList<>();
+        for(int ind=0;ind<n;ind++)
+            grid.add(new ArrayList<>());
+        for(int[] adj:mat){
+            grid.get(adj[0]).add(adj[1]);
+            grid.get(adj[1]).add(adj[0]);
+        }
+        boolean[] visited = new boolean[n];
+        return depth(grid,src,dest,visited);
+    }
+}
