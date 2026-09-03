@@ -1,0 +1,14 @@
+class Solution {
+    public int findJudge(int size, int[][] trust) {
+        int[] in = new int[size+1];
+        int[] out = new int[size+1];
+        for(int[] each:trust){
+            out[each[0]]++;
+            in[each[1]]++;
+        }
+        for(int it=1;it<=size;it++)
+        if(in[it]==size-1&&out[it]==0)
+        return it;
+        return -1;
+    }
+}
